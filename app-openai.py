@@ -2,7 +2,7 @@ import os
 from langchain import PromptTemplate, LLMChain
 from langchain.llms import OpenAI
 
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY']=os.environ.get('OPENAI_TOKEN')
 
 template = """Question: {question}
 

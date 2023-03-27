@@ -6,7 +6,7 @@ from langchain.callbacks import get_openai_callback
 llm = OpenAI(
     temperature=0,
     model_name='text-davinci-003',
-    openai_api_key='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'
+    openai_api_key=os.environ.get('OPENAI_TOKEN')
 
 )
 

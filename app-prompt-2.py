@@ -3,12 +3,10 @@ from langchain.llms import OpenAI
 from langchain import PromptTemplate, FewShotPromptTemplate
 from langchain.prompts.example_selector import LengthBasedExampleSelector
 
-os.environ['OPENAI_API_KEY'] = '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'
-
 # initialize the models
 openai = OpenAI(
     model_name="text-davinci-003",
-    # openai_api_key="YOUR_API_KEY"
+    openai_api_key=os.environ.get('OPENAI_TOKEN')
 )
 openai.temperature = 1.0  # increase creativity/randomness of output
 

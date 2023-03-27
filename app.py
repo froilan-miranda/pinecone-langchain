@@ -2,7 +2,7 @@ import os
 from langchain import PromptTemplate
 from langchain import HuggingFaceHub, LLMChain
 
-os.environ['HUGGINGFACEHUB_API_TOKEN'] = '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'
+os.environ['HUGGINGFACEHUB_API_TOKEN'] = os.environ.get('HUGGINGFACEHUB_TOKEN')
 template = """Question: {question}
 
 Answer: """
@@ -49,7 +49,7 @@ long_prompt = PromptTemplate(template=multi_template, input_variables=["question
 
 llm_chain = LLMChain(
     prompt=long_prompt,
-    llm=flan_t5
+    llm=hub_llm
 )
 
 qs_str = (

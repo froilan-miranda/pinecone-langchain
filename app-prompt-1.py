@@ -1,12 +1,11 @@
 import os
 from langchain import PromptTemplate
 from langchain.llms import OpenAI
-os.environ['OPENAI_API_KEY'] = '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'
 
 # initialize the models
 openai = OpenAI(
     model_name="text-davinci-003",
-    # openai_api_key="YOUR_API_KEY"
+    openai_api_key=os.environ.get('OPENAI_TOKEN')
 )
 
 template = """Answer the question based on the context below. If the
